@@ -1,29 +1,24 @@
 #include<iostream>
 using namespace std;
 int main(){
-	int currentsallary,yearlyincrement,bonus,years,yearlyincrementpercent;
-	string validity;
-	cout<<"enter current sallary: ";
-	cin>>currentsallary; 
-	cout<<"Enter the increment you want to give to employs each year: ";
-	cin>>yearlyincrementpercent;
-	cout<<"enter the years: ";
-	cin>>years;
-	//cout<<"Enter 'yes' if employ is elligible for bonus: ";
-	//cin>>validity;
-		cout<<"\nyearly increment will be "<<yearlyincrementpercent<<"%: ";
-	for(int i=1;i<=years;i++){
-yearlyincrement=currentsallary*(yearlyincrementpercent/100);
-coutd<<yearlyincrement;
-currentsallary=currentsallary+yearlyincrement;
-	cout<<"\nenter yes if user is elligible for bonus: ";
-	cin>>validity;
-	if("yes"){
-	bonus=yearlyincrement*0.02;
-	currentsallary=currentsallary+bonus;
-	cout<<"\nsallary of employs after bonus: "<<bonus;	
-	}
-cout<<currentsallary;		
-	}
+double currentsallary, yearlyincrementpercentage, bonus, years, incrementedsallary;
+string validity;
+cout<<"enter current sallary: ";
+cin>>currentsallary;
+cout<<"increment (in percentage) employs get each year: ";
+cin>> yearlyincrementpercentage;
+cout<<"Enter years: ";
+cin>>years;
+
+for(int i=1; i<=years ; i++){
+currentsallary=currentsallary+currentsallary*(yearlyincrementpercentage/100);
+cout<<"\nIncremented sallary: "<<currentsallary;
+cout<<"\nEnter 'yes' if employ is valid for bonus in "<<i<<"st/nd/rd year:";
+cin>>validity;
+if(validity=="yes"){
+    currentsallary=currentsallary+(currentsallary*0.02);
+}
+cout<<"\nSallary in "<<i<<"st/nd/rd year is: "<<currentsallary;
+}
 	
 }
